@@ -1,0 +1,14 @@
+mixin book-card(book)
+  article.book-card
+    .book-card__cover
+      img.book-card__img(src=book.cover alt=`Обложка книги "${book.title}"`)
+    .book-card__body
+      h2.book-card__title= book.title
+      .book-card__desc
+        each paragraph in book.desc
+          p= paragraph
+      if book.pdf
+        .book-card__buttons
+          a.book-card__btn(href=book.pdf target="_blank" rel="noopener") Смотреть
+          a.book-card__download-btn(href=book.pdf download=`${book.title}.pdf`)
+            img(src="/pdf-logo.png" alt="Скачать pdf")
