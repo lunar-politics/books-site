@@ -157,6 +157,10 @@ body {
   &__img {
     display: block;
     width: 100%;
+    @include mobile {
+      max-width: 250px;
+      margin: 0 auto;
+    }
   }
   &__title {
     margin-block: 0 1rem;
