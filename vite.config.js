@@ -6,5 +6,5 @@ export default defineConfig({
     plugins: [pug()],
     css: {
       devSourcemap: true,
-    },
+    },  
 })

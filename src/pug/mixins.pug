@@ -1,7 +1,7 @@
 mixin book-card(book)
   article.book-card
     .book-card__cover
-      img.book-card__img(src=book.cover alt=`Обложка книги "${book.title}"`)
+      img.book-card__img(src=book.cover alt=`Обложка книги "${book.title}"` loading="lazy")
     .book-card__body
       h2.book-card__title= book.title
       .book-card__desc
@@ -11,4 +11,4 @@ mixin book-card(book)
         .book-card__buttons
           a.book-card__btn(href=book.pdf target="_blank" rel="noopener") Смотреть
           a.book-card__download-btn(href=book.pdf download=`${book.title}.pdf`)
-            img(src="pdf-logo.png" alt="Скачать pdf")
+            img(src="pdf-logo.png" alt="Скачать pdf" aria-label=`Скачать книгу ${book.title} в формате PDF`)

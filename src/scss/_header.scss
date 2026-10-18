@@ -1,0 +1,62 @@
+@use "variables" as *;
+@use "breakpoints" as *;
+
+.header {
+  background: $color-accent;
+  padding: 2rem 0;
+  @include mobile{
+    padding: 1.3rem 0;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    @include mobile {
+      gap: 1rem;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $color-light;
+    text-decoration: none;
+    transition: text-decoration-color 0.2s;
+    img {
+      display: block;
+       @include tablet {
+        width: 250px;
+       }
+       @include mobile {
+        width: 150px;
+       }
+    }
+  }
+  
+  &__email {
+    color: $color-light;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.3rem;
+    opacity: 1;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    @include tablet {
+      font-size: 1.2rem;
+    }
+    @include mobile {
+      font-size: 1rem;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+    &:focus-visible {
+      outline: 2px solid $color-light;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+
+}
